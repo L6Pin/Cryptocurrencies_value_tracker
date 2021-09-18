@@ -3,8 +3,8 @@
 
 .header {
   @include flex(row, space-between, center);
-  border-bottom: $color-gray 2px solid;
-  padding: 15px;
+  border-bottom: $color-gray 3px solid;
+  padding: 20px;
 
   .navigation {
     @include flex(row);

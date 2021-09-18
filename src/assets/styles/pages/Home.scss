@@ -2,10 +2,22 @@
 @import "../../variables.scss";
 
 .home {
-  padding: 15px;
+  padding: 20px;
 
   .currency-info {
      @include flex(row,space-between,center);
      font-weight: bold;
+     margin-bottom: 30px;
+
+     & p:first-of-type{
+       width: 25%;
+       text-align: left;
+     }
+
+     & p {
+       width: 15%;
+       text-align: right;
+     }
+     
   }
 }
