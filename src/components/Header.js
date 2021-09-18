@@ -1,18 +1,40 @@
+import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "../assets/styles/components/Header.scss";
+import { loginUser } from "../redux/actions/loginUserAction";
 
-const Header = () => {
+const Header = ({ userLoggedIn, loginUser }) => {
   return (
     <div className="header">
       <div className="navigation-container">
         <div className="navigation">
-          <NavLink exact to="/" activeClassName="selected"><p>Home</p></NavLink>
-          <NavLink to="/favorites"activeClassName="selected"><p>Favorites</p></NavLink>
+          <NavLink exact to="/" activeClassName="selected">
+            <p>Home</p>
+          </NavLink>
+          {userLoggedIn && (
+            <NavLink to="/favorites" activeClassName="selected">
+              <p>Favorites</p>
+            </NavLink>
+          )}
         </div>
       </div>
-      <p className="login-button">Login</p>
+      {!userLoggedIn && (
+        <p className="login-button" onClick={loginUser}>
+          Login
+        </p>
+      )}
     </div>
   );
 };
 
-export default Header;
+function mapStateToProps(state) {
+  return {
+    userLoggedIn: state.loginUserReducer,
+  };
+}
+
+const mapDispatchToProps = {
+  loginUser
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
