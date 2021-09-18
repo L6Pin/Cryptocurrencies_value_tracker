@@ -1,5 +1,5 @@
 import "../assets/styles/pages/Home.scss"
-
+import {CurrencyCard} from "../components"
 
 const Home = () => {
 
@@ -14,6 +14,11 @@ const Home = () => {
                     <p>High</p>
                     <p>Low</p>
                 </div>
+                <CurrencyCard />
+                <CurrencyCard />
+                <CurrencyCard />
+                <CurrencyCard />
+                <CurrencyCard />
             </div>
         </div>
     )
