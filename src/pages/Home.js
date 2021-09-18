@@ -61,7 +61,6 @@ const Home = ({ symbols, getSymbols, currencyInfo, getCurrencyInfo, getDetailsRe
           <p>High</p>
           <p>Low</p>
         </div>
-
         {currencyInfo.map((currency) => <CurrencyCard currency={currency} />)}
       </div>
     </div>

@@ -4,12 +4,13 @@ import { getSymbolsReducer } from "./getSymbolsReducers";
 import { getCurrencyInfoReducer } from "./getCurrencyInfoReducer";
 import persistReducer from "redux-persist/es/persistReducer";
 import { getDetailsReducer } from "./getDetailsReducer";
+import { favoriteReducers } from "./favoriteReducers";
 import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["loginUserReducer"],
+  whitelist: ["loginUserReducer", "favoriteReducers"],
 };
 
 const rootReducer = combineReducers({
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   getSymbolsReducer,
   getCurrencyInfoReducer,
   getDetailsReducer,
+  favoriteReducers
 });
 
 export default persistReducer(persistConfig, rootReducer);

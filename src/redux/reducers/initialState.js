@@ -3,6 +3,7 @@ const initialState = {
   symbols: [],
   currencyInfo: [],
   currencyDetails: null,
+  favorites: []
 };
 
 export default initialState;
