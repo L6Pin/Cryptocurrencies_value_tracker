@@ -6,8 +6,9 @@ import useWebSocket from "react-use-websocket";
 import { getSymbols } from "../redux/actions/getSymbolsActions";
 import { getCurrencyInfo } from "../redux/actions/getCurrencyInfoActions";
 import { connect } from "react-redux";
+import { getDetailsReset } from "../redux/actions/getDetailsActions";
 
-const Home = ({ symbols, getSymbols, currencyInfo, getCurrencyInfo }) => {
+const Home = ({ symbols, getSymbols, currencyInfo, getCurrencyInfo, getDetailsReset }) => {
   const [socketUrl, setSocketUrl] = useState("wss://api-pub.bitfinex.com/ws/2");
   const messageHistory = useRef([]);
 
@@ -35,6 +36,7 @@ const Home = ({ symbols, getSymbols, currencyInfo, getCurrencyInfo }) => {
   const [currenciesParam, setCurrenciesParam] = useState("");
 
   useEffect(() => {
+    getDetailsReset()
     getSymbols();
     if (symbols.length > 0) {
       let currenciesParamString = "";
@@ -44,8 +46,9 @@ const Home = ({ symbols, getSymbols, currencyInfo, getCurrencyInfo }) => {
       });
       setCurrenciesParam(currenciesParamString);
       getCurrencyInfo(currenciesParamString);
+     
     }
-  }, [getSymbols, symbols, getCurrencyInfo]);
+  }, [getSymbols, symbols, getCurrencyInfo, getDetailsReset]);
 
   return (
     <div className="home">
@@ -75,6 +78,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   getSymbols,
   getCurrencyInfo,
+  getDetailsReset
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

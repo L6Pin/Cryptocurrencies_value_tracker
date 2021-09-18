@@ -1,11 +1,16 @@
 import { connect } from "react-redux";
 import "../assets/styles/pages/Details.scss";
 import { useParams } from "react-router";
+import { getDetails } from "../redux/actions/getDetailsActions";
 
-const Details = ({ userLoggedIn }) => {
+import { useEffect } from "react";
 
-  let {id} = useParams()
+const Details = ({ userLoggedIn, currencyDetails, getDetails }) => {
+  let { id } = useParams();
 
+  useEffect(() => {
+    getDetails(id);
+  }, [getDetails]);
 
   return (
     <div className="details">
@@ -16,10 +21,10 @@ const Details = ({ userLoggedIn }) => {
         <p>Low</p>
       </div>
       <div className="details-card">
-        <p>Name</p>
-        <p>32,866.0</p>
-        <p>1492.00</p>
-        <p>33.639.00</p>
+        <p>{id.toUpperCase()}</p>
+        <p>{currencyDetails?.last_price}</p>
+        <p>{currencyDetails?.high}</p>
+        <p>{currencyDetails?.low}</p>
       </div>
       {userLoggedIn && (
         <>
@@ -34,7 +39,12 @@ const Details = ({ userLoggedIn }) => {
 function mapStateToProps(state) {
   return {
     userLoggedIn: state.loginUserReducer,
+    currencyDetails: state.getDetailsReducer,
   };
 }
 
-export default connect(mapStateToProps)(Details);
+const mapDispatchToProps = {
+  getDetails,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Details);
