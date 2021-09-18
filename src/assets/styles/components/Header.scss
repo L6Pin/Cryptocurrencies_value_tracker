@@ -9,12 +9,15 @@
   .navigation {
     @include flex(row);
     color: $color-blue;
+
+    & p {
+      margin-right: 20px;
+    }
   }
 
   .login-button {
     background-color: $color-blue;
     color: $color-white;
     padding: 10px 30px;
-
   }
 }

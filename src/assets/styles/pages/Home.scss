@@ -3,7 +3,8 @@
 
 .home {
   padding: 20px;
-
+  border-bottom: $color-gray 3px solid;
+  
   .currency-info {
      @include flex(row,space-between,center);
      font-weight: bold;
