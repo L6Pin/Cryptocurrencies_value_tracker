@@ -1,7 +1,12 @@
 import { connect } from "react-redux";
 import "../assets/styles/pages/Details.scss";
+import { useParams } from "react-router";
 
 const Details = ({ userLoggedIn }) => {
+
+  let {id} = useParams()
+
+
   return (
     <div className="details">
       <div className="currency-details">

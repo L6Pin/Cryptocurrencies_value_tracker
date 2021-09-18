@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import "../assets/styles/components/CurrencyCard.scss";
 
-const CurrencyCard = () => {
+const CurrencyCard = ({ currency }) => {
   return (
     <div className="currency-card">
-      <p><Link to="/details">Name</Link></p>
-      <p>32,866.00</p>
-      <p>1492.00</p>
-      <p>+0.04%</p>
-      <p>33.639.00</p>
-      <p>33.639.00</p>
+      <p>
+        <Link to={`/details/${currency[0].split("t")[1].toLowerCase()}`}>
+          {currency[0].split("t")[1]}
+        </Link>
+      </p>
+      <p>{currency[7].toFixed(2)}</p>
+      <p>{currency[5].toFixed(2)}</p>
+      <p>{`${(currency[6] * 100).toFixed(2)}%`}</p>
+      <p>{currency[9].toFixed(2)}</p>
+      <p>{currency[10].toFixed(2)}</p>
     </div>
   );
 };

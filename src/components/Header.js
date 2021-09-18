@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../assets/styles/components/Header.scss";
 import { loginUser } from "../redux/actions/loginUserAction";
 
+
 const Header = ({ userLoggedIn, loginUser }) => {
   return (
     <div className="header">
@@ -34,7 +35,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  loginUser
+  loginUser,
+  
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

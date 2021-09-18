@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import loginUserReducer from "./loginUserReducer";
-
+import { getSymbolsReducer } from "./getSymbolsReducers";
+import { getCurrencyInfoReducer } from "./getCurrencyInfoReducer";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 
@@ -11,7 +12,9 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    loginUserReducer
+  loginUserReducer,
+  getSymbolsReducer,
+  getCurrencyInfoReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

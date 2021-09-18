@@ -10,7 +10,7 @@ function App({ userLoggedIn }) {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/details" component={Details} />
+        <Route path="/details/:id" component={Details} />
         <Route path="*" component={RouteGuard} />
       </Switch>
     </>
@@ -22,7 +22,7 @@ function App({ userLoggedIn }) {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/details" component={Details} />
+          <Route path="/details/:id" component={Details} />
           <Route exact path="/favorites" component={Favorites} />
           <Route path="*" component={RouteGuard} />
         </Switch>
