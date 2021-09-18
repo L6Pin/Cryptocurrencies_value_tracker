@@ -5,10 +5,16 @@
   @include flex(row, space-between, center);
   border-bottom: $color-gray 3px solid;
   padding: 20px;
+  
+  
+
+  .selected{
+    color: $color-blue;
+  }
 
   .navigation {
     @include flex(row);
-    color: $color-blue;
+    color: $color-gray;
 
     & p {
       margin-right: 20px;

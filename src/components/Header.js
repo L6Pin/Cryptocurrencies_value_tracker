@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "../assets/styles/components/Header.scss";
 
 const Header = () => {
@@ -5,8 +6,8 @@ const Header = () => {
     <div className="header">
       <div className="navigation-container">
         <div className="navigation">
-          <p>Home</p>
-          <p>Favorites</p>
+          <NavLink exact to="/" activeClassName="selected"><p>Home</p></NavLink>
+          <NavLink to="/favorites"activeClassName="selected"><p>Favorites</p></NavLink>
         </div>
       </div>
       <p className="login-button">Login</p>
