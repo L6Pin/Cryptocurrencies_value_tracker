@@ -1,0 +1,11 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.home {
+  padding: 15px;
+
+  .currency-info {
+     @include flex(row,space-between,center);
+     font-weight: bold;
+  }
+}
