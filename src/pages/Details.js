@@ -24,8 +24,7 @@ const Details = ({
   }, [getDetails, id]);
 
   let Favorite = {
-    name: id,
-    ...currencyDetails,
+    name: `t${id.toUpperCase()}`
   };
 
   let addNewFavorites = () => {
@@ -40,7 +39,7 @@ const Details = ({
   useEffect(()=>{
     if(favorites.length !== 0){
       favorites.map(fav => {
-        if(fav.name === id){
+        if(fav.name === `t${id.toUpperCase()}`){
           setContainsFavorite(true)
         }
       })
