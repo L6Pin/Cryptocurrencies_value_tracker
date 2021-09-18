@@ -1,0 +1,69 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.details {
+  padding: 20px;
+  border-bottom: $color-gray 3px solid;
+
+  .currency-details {
+    @include flex(row, space-between, center);
+    font-weight: bold;
+    margin-bottom: 30px;
+    & p:first-of-type {
+      width: 25%;
+      text-align: left;
+    }
+
+    & p {
+      width: 15%;
+      text-align: right;
+    }
+
+
+  }
+
+  .details-card {
+    @include flex(row, space-between, center);
+
+    margin-bottom: 30px;
+    & p:first-of-type {
+      width: 25%;
+      text-align: left;
+    }
+
+    & p {
+      width: 15%;
+      text-align: right;
+    }
+  }
+  
+    
+  .add{
+    background: $color-blue;
+    &:hover{
+      background: darken($color-blue, $amount: 5);
+    }
+  }
+
+  .remove{
+    background: $color-red;
+    
+    &:hover{
+      background: darken($color-red, $amount: 5);
+    }
+  }
+
+  .button{
+    display: inline-block;
+    padding: 15px 30px;
+    color: $color-white;
+    font-weight: bold;
+
+
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+}
