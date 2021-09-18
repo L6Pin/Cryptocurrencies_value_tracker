@@ -1,7 +1,7 @@
+import { connect } from "react-redux";
 import "../assets/styles/pages/Details.scss";
 
-
-const Details = () => {
+const Details = ({ userLoggedIn }) => {
   return (
     <div className="details">
       <div className="currency-details">
@@ -16,10 +16,20 @@ const Details = () => {
         <p>1492.00</p>
         <p>33.639.00</p>
       </div>
-      <p className="button add">Add to favorites</p>
-      {/* <p className="button remove">Remove from favorites</p> */}
+      {userLoggedIn && (
+        <>
+          <p className="button add">Add to favorites</p>
+          {/* <p className="button remove">Remove from favorites</p> */}
+        </>
+      )}
     </div>
   );
 };
 
-export default Details;
+function mapStateToProps(state) {
+  return {
+    userLoggedIn: state.loginUserReducer,
+  };
+}
+
+export default connect(mapStateToProps)(Details);
