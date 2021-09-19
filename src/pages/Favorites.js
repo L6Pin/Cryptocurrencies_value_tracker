@@ -3,7 +3,6 @@ import "../assets/styles/pages/Favorites.scss";
 import { CurrencyCard } from "../components";
 
 const Favorites = ({ favoriteCurrencies }) => {
- 
   return (
     <div className="favorites">
       <div className="currency-info">
@@ -15,8 +14,8 @@ const Favorites = ({ favoriteCurrencies }) => {
         <p>Low</p>
       </div>
       {favoriteCurrencies.map((symbol) => (
-          <CurrencyCard symbol={symbol} key={symbol} />
-        ))}
+        <CurrencyCard symbol={symbol} key={symbol} />
+      ))}
     </div>
   );
 };

@@ -29,5 +29,3 @@ export function getSymbols() {
       .catch(() => dispatch(getSymbolsFailure));
   };
 }
-
-

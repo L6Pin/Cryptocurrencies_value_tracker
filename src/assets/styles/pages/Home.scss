@@ -4,21 +4,20 @@
 .home {
   padding: 20px;
   border-bottom: $color-gray 3px solid;
-  
+
   .currency-info {
-     @include flex(row,space-between,center);
-     font-weight: bold;
-     margin-bottom: 30px;
+    @include flex(row, space-between, center);
+    font-weight: bold;
+    margin-bottom: 30px;
 
-     & p:first-of-type{
-       width: 25%;
-       text-align: left;
-     }
+    & p:first-of-type {
+      width: 25%;
+      text-align: left;
+    }
 
-     & p {
-       width: 15%;
-       text-align: right;
-     }
-     
+    & p {
+      width: 15%;
+      text-align: right;
+    }
   }
 }

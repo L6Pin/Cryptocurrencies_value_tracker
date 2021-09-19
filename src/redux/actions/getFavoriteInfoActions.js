@@ -26,8 +26,8 @@ export function getFavoriteInfo(params) {
     currenciesApi
       .getCurrencyInfo(params)
       .then((response) => {
-        console.log(response)
-        dispatch(getFavoriteInfoSuccess(response))
+        console.log(response);
+        dispatch(getFavoriteInfoSuccess(response));
       })
       .catch(() => dispatch(getFavoriteInfoFailure()));
   };

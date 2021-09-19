@@ -1,7 +1,5 @@
 import { Redirect } from "react-router";
 
-const RouteGuard = () => (
-    <Redirect to="/" />
-)
+const RouteGuard = () => <Redirect to="/" />;
 
-export default RouteGuard
+export default RouteGuard;
