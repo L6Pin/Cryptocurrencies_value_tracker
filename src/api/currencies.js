@@ -19,3 +19,5 @@ export async function getDetails(params) {
   const details = await response.json();
   return details;
 }
+
+

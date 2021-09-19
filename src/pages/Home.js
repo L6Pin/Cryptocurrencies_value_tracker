@@ -8,47 +8,11 @@ import { getCurrencyInfo } from "../redux/actions/getCurrencyInfoActions";
 import { connect } from "react-redux";
 import { getDetailsReset } from "../redux/actions/getDetailsActions";
 
-const Home = ({ symbols, getSymbols, currencyInfo, getCurrencyInfo, getDetailsReset }) => {
-  const [socketUrl, setSocketUrl] = useState("wss://api-pub.bitfinex.com/ws/2");
-  const messageHistory = useRef([]);
-
-  let msg = JSON.stringify({
-    event: "subscribe",
-    channel: "ticker",
-    symbol: "tBTCUSD",
-  });
-
-  const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {
-    onOpen: () => {
-      sendMessage(msg);
-    },
-    //Will attempt to reconnect on all close events, such as server shutting down
-    shouldReconnect: (closeEvent) => true,
-  });
-
-  messageHistory.current = useMemo(
-    () => messageHistory.current.concat(lastMessage),
-    [lastMessage]
-  );
-
-  //   if (lastMessage != null) console.log(JSON.parse(lastMessage.data));
-
-  const [currenciesParam, setCurrenciesParam] = useState("");
-
+const Home = ({ symbols, getSymbols, getDetailsReset }) => {
   useEffect(() => {
-    getDetailsReset()
+    getDetailsReset();
     getSymbols();
-    if (symbols.length > 0) {
-      let currenciesParamString = "";
-      symbols.forEach((symbol) => {
-        currenciesParamString =
-          currenciesParamString + `t${symbol.toUpperCase()},`;
-      });
-      setCurrenciesParam(currenciesParamString);
-      getCurrencyInfo(currenciesParamString);
-     
-    }
-  }, [getSymbols, symbols, getCurrencyInfo, getDetailsReset]);
+  }, [getSymbols, getDetailsReset]);
 
   return (
     <div className="home">
@@ -61,7 +25,9 @@ const Home = ({ symbols, getSymbols, currencyInfo, getCurrencyInfo, getDetailsRe
           <p>High</p>
           <p>Low</p>
         </div>
-        {currencyInfo.map((currency) => <CurrencyCard currency={currency} />)}
+        {symbols.map((symbol) => (
+          <CurrencyCard symbol={symbol} />
+        ))}
       </div>
     </div>
   );
@@ -70,14 +36,12 @@ const Home = ({ symbols, getSymbols, currencyInfo, getCurrencyInfo, getDetailsRe
 function mapStateToProps(state) {
   return {
     symbols: state.getSymbolsReducer,
-    currencyInfo: state.getCurrencyInfoReducer,
   };
 }
 
 const mapDispatchToProps = {
   getSymbols,
-  getCurrencyInfo,
-  getDetailsReset
+  getDetailsReset,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -11,7 +11,7 @@ import storage from "redux-persist/lib/storage";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["loginUserReducer", "favoriteReducers","getFavoriteInfoReducer"],
+  whitelist: ["loginUserReducer", "favoriteReducers"],
 };
 
 const rootReducer = combineReducers({
@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
   getCurrencyInfoReducer,
   getDetailsReducer,
   favoriteReducers,
-  getFavoriteInfoReducer
+  getFavoriteInfoReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

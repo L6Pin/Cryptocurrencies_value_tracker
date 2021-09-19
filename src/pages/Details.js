@@ -23,32 +23,26 @@ const Details = ({
     getDetails(id);
   }, [getDetails, id]);
 
-  let Favorite = {
-    name: `t${id.toUpperCase()}`
-  };
-
   let addNewFavorites = () => {
-    addFavorites(Favorite);
+    addFavorites(id);
   };
 
   let removeFavorite = () => {
-    removeFavorites(Favorite);
-    setContainsFavorite(false)
+    removeFavorites(id);
+    setContainsFavorite(false);
   };
 
-  useEffect(()=>{
-    if(favorites.length !== 0){
-      favorites.map(fav => {
-        if(fav.name === `t${id.toUpperCase()}`){
-          setContainsFavorite(true)
+  useEffect(() => {
+    if (favorites.length !== 0) {
+      favorites.map((fav) => {
+        if (fav === id) {
+          setContainsFavorite(true);
         }
-      })
+      });
     }
-  })
+  });
 
   const [containsFavorite, setContainsFavorite] = useState(false);
-
-  
 
   return (
     <div className="details">
@@ -60,9 +54,9 @@ const Details = ({
       </div>
       <div className="details-card">
         <p>{id.toUpperCase()}</p>
-        <p>{currencyDetails?.last_price}</p>
-        <p>{currencyDetails?.high}</p>
-        <p>{currencyDetails?.low}</p>
+        <p>{currencyDetails?.last_price.toLocaleString("en-US")}</p>
+        <p>{currencyDetails?.high.toLocaleString("en-US")}</p>
+        <p>{currencyDetails?.low.toLocaleString("en-US")}</p>
       </div>
       {userLoggedIn && (
         <>

@@ -7,7 +7,7 @@ export function getSymbolsReducer(state = initialState.symbols, action) {
       return state;
     }
     case types.GET_SYMBOLS_SUCCESS: {
-      return action.response.splice(0, 5);
+      return action.response.splice(0, 2);
     }
     case types.GET_SYMBOLS_FAILURE: {
       return state;
