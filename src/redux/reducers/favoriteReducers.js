@@ -7,7 +7,7 @@ export function favoriteReducers(state = initialState.favorites, action) {
       return [...state, action.response];
     }
     case types.REMOVE_FAVORITES: {
-      let newState = state.filter((favorite) => favorite.name !== action.response.name);
+      let newState = state.filter((favorite) => favorite !== action.response);
       return newState;
     }
     default: {
