@@ -34,7 +34,7 @@ const Details = ({
 
   useEffect(() => {
     if (favorites.length !== 0) {
-      favorites.map((fav) => {
+      favorites.forEach((fav) => {
         if (fav === id) {
           setContainsFavorite(true);
         }

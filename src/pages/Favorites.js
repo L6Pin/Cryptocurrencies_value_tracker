@@ -1,9 +1,6 @@
 import { connect } from "react-redux";
 import "../assets/styles/pages/Favorites.scss";
-import { getFavoriteInfo } from "../redux/actions/getFavoriteInfoActions";
 import { CurrencyCard } from "../components";
-import { useEffect } from "react";
-import { useState } from "react";
 
 const Favorites = ({ favoriteCurrencies }) => {
  
@@ -18,7 +15,7 @@ const Favorites = ({ favoriteCurrencies }) => {
         <p>Low</p>
       </div>
       {favoriteCurrencies.map((symbol) => (
-          <CurrencyCard symbol={symbol} />
+          <CurrencyCard symbol={symbol} key={symbol} />
         ))}
     </div>
   );

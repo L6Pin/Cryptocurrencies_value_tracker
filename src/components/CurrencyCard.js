@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/components/CurrencyCard.scss";
 
@@ -24,7 +24,7 @@ const CurrencyCard = ({ symbol }) => {
   ws.onmessage = (msg) => {
     let response = JSON.parse(msg.data);
     let hb = response[1];
-    if (hb != "hb") {
+    if (hb !== "hb") {
       let hbArray = [];
       for (let index in hb) {
         hbArray.push(hb[index]);
@@ -38,8 +38,6 @@ const CurrencyCard = ({ symbol }) => {
       }
     }
   };
-
-
 
   return (
     <div className="currency-card">

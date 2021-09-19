@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import "../assets/styles/pages/Home.scss";
 import { CurrencyCard } from "../components";
-import React, { useState, useCallback, useMemo, useRef } from "react";
-import useWebSocket from "react-use-websocket";
 import { getSymbols } from "../redux/actions/getSymbolsActions";
-import { getCurrencyInfo } from "../redux/actions/getCurrencyInfoActions";
 import { connect } from "react-redux";
 import { getDetailsReset } from "../redux/actions/getDetailsActions";
 
@@ -26,7 +23,7 @@ const Home = ({ symbols, getSymbols, getDetailsReset }) => {
           <p>Low</p>
         </div>
         {symbols.map((symbol) => (
-          <CurrencyCard symbol={symbol} />
+          <CurrencyCard symbol={symbol} key={symbol} />
         ))}
       </div>
     </div>
