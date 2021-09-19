@@ -5,10 +5,8 @@
   @include flex(row, space-between, center);
   border-bottom: $color-gray 3px solid;
   padding: 20px;
-  
-  
 
-  .selected{
+  .selected {
     color: $color-blue;
   }
 
@@ -26,7 +24,7 @@
     color: $color-white;
     padding: 10px 30px;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
       background: darken($color-blue, $amount: 5);
     }

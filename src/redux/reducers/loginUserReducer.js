@@ -3,7 +3,7 @@ import initialState from "./initialState";
 
 export default function loginUserReducer(
   state = initialState.userLoggedIn,
-  action,
+  action
 ) {
   switch (action.type) {
     case types.LOGIN_USER: {
