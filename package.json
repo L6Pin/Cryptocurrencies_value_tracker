@@ -3,16 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.4",
+    "concurrently": "^6.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^2.0.1",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "react-use-websocket": "^2.7.1",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "web-vitals": "^1.1.2",
+    "ws": "^8.2.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \" npm run start-front \"   \"npm run start-server \" ",
+    "start-front": "react-scripts start",
+    "start-server": "node setupProxy.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "redux-immutable-state-invariant": "^2.1.0"
   }
 }

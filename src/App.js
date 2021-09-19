@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./assets/styles/App.scss";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Header } from "./components";
+import { Home, Details, Favorites, RouteGuard } from "./pages";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function App({ userLoggedIn }) {
+  let route = (
+    <>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/details/:id" component={Details} />
+        <Route path="*" component={RouteGuard} />
+      </Switch>
+    </>
   );
+
+  if (userLoggedIn) {
+    route = (
+      <>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/details/:id" component={Details} />
+          <Route exact path="/favorites" component={Favorites} />
+          <Route path="*" component={RouteGuard} />
+        </Switch>
+      </>
+    );
+  }
+
+  return <Router>{route}</Router>;
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    userLoggedIn: state.loginUserReducer,
+  };
+}
+
+export default connect(mapStateToProps)(App);

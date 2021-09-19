@@ -1,0 +1,25 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.currency-card {
+  @include flex(row, space-between, center);
+  margin-top: 30px;
+
+  a{
+    color: $color-blue;
+    &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  & p:first-of-type {
+    width: 25%;
+    text-align: left;
+  }
+
+  & p {
+    width: 15%;
+    text-align: right;
+  }
+}

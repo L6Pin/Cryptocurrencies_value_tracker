@@ -1,0 +1,34 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.header {
+  @include flex(row, space-between, center);
+  border-bottom: $color-gray 3px solid;
+  padding: 20px;
+  
+  
+
+  .selected{
+    color: $color-blue;
+  }
+
+  .navigation {
+    @include flex(row);
+    color: $color-gray;
+
+    & p {
+      margin-right: 20px;
+    }
+  }
+
+  .login-button {
+    background-color: $color-blue;
+    color: $color-white;
+    padding: 10px 30px;
+
+    &:hover{
+      cursor: pointer;
+      background: darken($color-blue, $amount: 5);
+    }
+  }
+}
