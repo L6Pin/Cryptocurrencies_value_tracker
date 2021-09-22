@@ -26,6 +26,8 @@ The web app tracks cryptocurrency prices and allows the user to favorite them an
     </li>
         </li>
         <li><p><span style="font-weight: bold">Redux persist</span> - Redux persist is a library that allows certain state values to be saved to local storage, therefore making the data available even upon refreshing the page.</p>
-
+    </li>
+        <li><p><span style="font-weight: bold">Web Sockets</span> - Used for displaying live price changes.</p>
+    </li>
 
 </ul>
