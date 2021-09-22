@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+<h1>
+Cryptocurrencies value tracker
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>Project Overview</h2>
+<p> 
+The web app tracks cryptocurrency prices and allows the user to favorite them and see them on a seperate favorites page. Upon clicking on the currency name, the user will see the latest price changes as well as have the option to add or remove it from favorites. If the user is not logged in they will not have the option to favorite the cryptocurrency.
+</p>
+<br/>
+<img src="./src/assets/images/readme_project_preview.png">
 
-## Available Scripts
 
-In the project directory, you can run:
+<h2>Technologies</h2>
+<p>For this project, the following technologies were used:</p>
+<ul>
+    <li><p><span style="font-weight: bold">HTML</span> - Used to create the markup of the page.</p>
+    </li>
+        <li><p><span style="font-weight: bold">SASS/CSS</span> - Sass was used in order to streamline and simplify the styling of the page.</p>
+    </li>
+        </li>
+        <li><p><span style="font-weight: bold">ReactJS</span> - This framework was useful to more easily create sections and components of the website.</p>
+    </li>
+    <li><p><span style="font-weight: bold">React Router</span> - React Router was used to dynamically create pages and for conditional page redirection.</p>
+    </li>
+        <li><p><span style="font-weight: bold">Redux</span> - Redux was used for storing application critical data separate from the UI, that was used for profile verification and creating app functionalities using it.</p>
+    </li>
+        </li>
+        <li><p><span style="font-weight: bold">Redux persist</span> - Redux persist is a library that allows certain state values to be saved to local storage, therefore making the data available even upon refreshing the page.</p>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</ul>

@@ -1,1 +1,0 @@
-# teletrader-test_project
